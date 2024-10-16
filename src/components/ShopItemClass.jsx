@@ -3,19 +3,19 @@ import { Component } from 'react';
 
 export default class ShopItemClass extends Component {
 
+  static propTypes = {
+    item: PropTypes.shape({
+      brand: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      description: PropTypes.string.isRequired,
+      descriptionFull: PropTypes.string.isRequired,
+      price: PropTypes.number.isRequired,
+      currency: PropTypes.string.isRequired
+    }).isRequired
+  };
+
   render() {
     const { brand, title, description, descriptionFull, price, currency } = this.props.item;
-
-    ShopItemClass.propTypes = {
-      item: PropTypes.shape({
-        brand: PropTypes.string.isRequired,
-        title: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        descriptionFull: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired,
-        currency: PropTypes.string.isRequired
-      }).isRequired
-    };
 
     return (
       <div className="main-content">
